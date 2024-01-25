@@ -1,0 +1,66 @@
+<script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>University of Cross River State(UNICROSS) Certificate Verification</title>
+    <link rel="icon" href="/img/logo.png" type="image/icon type">
+</head>
+<body>
+
+    <section>
+        <nav>
+            <div id="logo-container">
+                <a href="https://unicross.edu.ng/" target="_blank">
+                    <img src="https://unicross.edu.ng/images/logo.png" alt="Company Logo">
+                </a>
+            </div>
+            <ul>
+                <ul>
+                    <li><a href="#" onclick="downloadCertificate()">Download</a></li>
+                    <!-- <li><a href="#" onclick="downloadAsPDF()">Download as PDF</a></li> -->
+                    <li><a href="#" onclick="printCertificate()">Print</a></li>
+                </ul>                
+            </ul>
+        </nav>
+
+        <div id="main-container">
+            <div id="certificate-container">
+                <div id="certificate-img">
+                    <img src="/img/certificate.jpg" alt="Certificate Image">
+                </div>
+                <div id="certificate-info">
+                    <p>Certificate ID: <span id="certificate-id">005988</span></p>
+                    <p>Full Name: <span id="user-name">Theresa Ngob Ndum</span></p>
+                    <p>Issue Date: <span id="issue-date">September 30, 2016</span></p>
+                    <div id="qr-code-container">
+                        <div id="qrcode"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="popup-overlay">
+            <img id="popup-image" src="/img/certificate.jpg" alt="Zoomed Image">
+            <div id="popup-close">&times;</div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Copyright © 2024 All Rights Reserved. Certificate Verification</p>
+    </footer>
+
+    <script>
+        var qrcode = new QRCode(document.getElementById("qrcode"), {
+            text: window.location.href,
+            width: 128,
+            height: 128
+        });
+    </script>
+
+   <script src="script.js"></script>
+</body>
+</html>
